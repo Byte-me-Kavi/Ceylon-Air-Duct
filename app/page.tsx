@@ -81,31 +81,35 @@ export default function Home() {
       icon: Grid3x3,
       image: "/images/Square-Ducts.jpg",
       description:
-        "High-quality square ductwork for all industrial applications",
+        "Precision-fabricated square ductwork — corrosion-resistant, dimensionally accurate, and engineered for airtight installations in commercial and industrial HVAC systems.",
     },
     {
       name: "Spiral Ducts",
       icon: Wind,
       image: "/images/Spiral-Ducts.png",
-      description: "Efficient spiral duct systems for optimal airflow",
+      description:
+        "Lightweight, high-strength spiral ducts that deliver smooth airflow, minimal leakage, and fast installation for efficient HVAC performance.",
     },
     {
       name: "Grills and Diffusers",
       icon: Grid3x3,
       image: "/images/Grills-and-Diffusers.jpeg",
-      description: "Premium grills and diffusers for air distribution",
+      description:
+        "Architectural grills and precision diffusers designed for even air distribution, noise control, and a clean aesthetic finish.",
     },
     {
       name: "Volume Control Dampers",
       icon: Volume2,
       image: "/images/Volume-Control-Dampers.jpg",
-      description: "Precision control dampers for air volume regulation",
+      description:
+        "Robust VCDs with tight sealing and smooth actuation — ideal for zoning, balancing, and reliable airflow control in duct networks.",
     },
     {
       name: "Sound Attenuators",
       icon: Volume2,
       image: "/images/Sound-Attenuators.jpg",
-      description: "Advanced sound reduction solutions",
+      description:
+        "Engineered acoustic attenuators that reduce fan and system noise while preserving airflow efficiency — suitable for sensitive commercial spaces.",
     },
   ];
 
@@ -114,21 +118,29 @@ export default function Home() {
       name: "Galvanized Sheet",
       icon: FileText,
       image: "/images/Galvanized-Sheet.jpeg",
+      description:
+        "High-grade galvanized sheets with uniform coating for durable fabrication and long-term corrosion protection.",
     },
     {
       name: "Galvanized Coil",
       icon: FileText,
       image: "/images/Galvanized-Coil.png",
+      description:
+        "Precision-rolled galvanized coil for large-scale production — consistent thickness and excellent formability.",
     },
     {
       name: "Disc Valves",
       icon: Grid3x3,
       image: "/images/Disc-Valves.jpg",
+      description:
+        "Durable disc valves for dampening and flow isolation — designed for reliable operation in ventilation systems.",
     },
     {
       name: "Four Way Diffusers",
       icon: Grid3x3,
       image: "/images/Four-Way-Diffusers.jpg",
+      description:
+        "High-performance four-way diffusers for uniform airflow distribution in large open-ceiling spaces and atriums.",
     },
   ];
 
@@ -136,7 +148,7 @@ export default function Home() {
     "/images/opening-1.jpg",
     "/images/opening-2.jpg",
     "/images/opening-3.jpg",
-    "/images/opeing-4.jpg",
+    "/images/opening-4.jpg",
   ];
 
   const workPhotos = [
@@ -164,13 +176,13 @@ export default function Home() {
               onClick={() => scrollToSection("home")}
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-[#2a80b5]/10 rounded-xl blur-lg group-hover:blur-xl transition-all" />
+                <div className="absolute inset-0 rounded-xl blur-lg group-hover:blur-xl transition-all" />
                 <Image
-                  src="/images/logo-no-bg.png"
+                  src="/images/ll.png"
                   alt="Ceylon Air Duct Logo"
                   width={80}
                   height={80}
-                  className="rounded-xl relative z-10 transition-transform duration-300 group-hover:scale-105 lg:w-40 lg:group-hover:scale-105"
+                  className="rounded-xl relative z-10 transition-transform duration-300 group-hover:scale-105 lg:w-35 lg:group-hover:scale-105"
                 />
               </div>
               {/* <div className="hidden sm:block">
@@ -218,8 +230,10 @@ export default function Home() {
                   href="tel:0114435953"
                   className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:text-[#2a80b5] transition-colors"
                 >
-                  <Phone size={16} />
-                  <span className="hidden xl:inline">0114435953</span>
+                  <Phone size={16} color="red" />
+                  <span className="hidden text-red-600 xl:inline">
+                    011 4435 953
+                  </span>
                 </a>
                 <button
                   onClick={() => scrollToSection("contact")}
@@ -359,18 +373,21 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section
+        id="about"
+        className="py-20 bg-linear-to-br from-[#cce4f4] to-[#dbeaf2]"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              About <span className="text-[#2a80b5]">Ceylon Air Duct</span>
+            <h2 className="text-5xl font-bold mb-6">
+              About{" "}
+              <span className="text-[#2a80b5]">Ceylon Air Duct Pvt Ltd</span>
             </h2>
             <p className="text-lg text-gray-600">
-              Ceylon Air Duct Lanka Pvt Ltd is a leading manufacturer of air
-              efficient products in Sri Lanka. With state-of-the-art
-              manufacturing facilities and a dedicated team, we deliver
-              top-quality HVAC solutions to meet the diverse needs of our
-              clients.
+              Ceylon Air Duct Pvt Ltd is a leading manufacturer of air efficient
+              products in Sri Lanka. With state-of-the-art manufacturing
+              facilities and a dedicated team, we deliver top-quality HVAC
+              solutions to meet the diverse needs of our clients.
             </p>
           </div>
 
@@ -405,15 +422,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* subtle SVG separator between About and Products */}
+      <div className="-mt-10">
+        <svg
+          className="w-full h-12 block"
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0,32 C360,96 720,0 1440,48 L1440,0 L0,0 Z" fill="#ebf3fa" />
+        </svg>
+      </div>
+
       {/* Products Section */}
       <section
         id="products"
-        className="py-20 bg-linear-to-b from-white to-[#ebf3fa]"
+        className="py-20 bg-linear-to-b from-[#f3f8fb] to-[#e6f3fb] relative overflow-hidden"
       >
+        {/* decorative blurred brand blobs for depth */}
+        <div className="pointer-events-none absolute -top-24 left-6 w-72 h-72 bg-[#2a80b5] rounded-full opacity-6 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 right-6 w-72 h-72 bg-[#2a80b5] rounded-full opacity-6 blur-3xl" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              Our <span className="text-[#2a80b5]">Products</span>
+            <h2 className="text-5xl font-bold mb-6">
+              Our <span className="text-[#000000]">Products</span>
             </h2>
             <p className="text-lg text-gray-600">
               Comprehensive range of air duct products manufactured and supplied
@@ -422,35 +454,44 @@ export default function Home() {
           </div>
 
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-center mb-8">
-              <span className="text-[#2a80b5]">Products We Manufacture</span>
+            <h3 className="text-4xl font-bold text-center mb-12">
+              <span className="text-[#325cb8]">Products We Manufacture</span>
             </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex flex-wrap gap-8 justify-center">
               {products.map((product, index) => (
                 <div
                   key={index}
-                  className="group bg-white rounded-2xl border border-[#2a80b5]/10 hover:border-[#2a80b5]/30 hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden"
+                  className="w-full sm:w-1/2 md:w-[calc(30%-1rem)] lg:w-[calc(30%-1rem)] group relative bg-white/60 backdrop-blur-sm rounded-2xl border border-[#2a80b5]/8 overflow-hidden transform transition-all duration-400 hover:shadow-2xl hover:-translate-y-3"
                 >
-                  <div className="relative h-48 bg-linear-to-br from-[#ebf3fa] to-white overflow-hidden">
+                  <div className="relative h-48 overflow-hidden">
+                    <div className="absolute inset-0 bg-linear-to-br from-[#ebf3fa] to-white" />
                     <Image
                       src={product.image}
                       alt={product.name}
                       fill
-                      className="object-contain p-4 group-hover:scale-110 transition-transform duration-500"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
+                    <div className="absolute top-4 left-4 bg-green-400/80 backdrop-blur rounded-full px-3 py-1 text-xs font-semibold text-white border border-white/10">
+                      Manufactured
+                    </div>
+                    <div className="absolute inset-0 bg-linear-to-t from-black/0 to-black/10 opacity-40 pointer-events-none" />
                   </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-linear-to-br from-[#2a80b5] to-[#236a99] rounded-lg flex items-center justify-center shrink-0">
-                        <product.icon className="w-5 h-5 text-white" />
-                      </div>
+
+                  <div className="p-6 flex flex-col gap-4">
+                    <div>
                       <h3 className="text-lg font-bold text-gray-900">
                         {product.name}
                       </h3>
+                      <p className="text-sm text-gray-600 mt-3 max-w-prose">
+                        {product.description}
+                      </p>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {product.description}
-                    </p>
+
+                    <div className="flex items-center justify-between mt-2">
+                      <div className="text-xs text-[#2a80b5]">
+                        High quality • Reliable
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -458,29 +499,45 @@ export default function Home() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-center mb-8">
-              <span className="text-[#2a80b5]">
+            <h3 className="text-4xl font-bold text-center mb-12">
+              <span className="text-[#325cb8]">
                 Products We Import & Supply
               </span>
             </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex flex-wrap gap-8 justify-center">
               {imports.map((item, index) => (
                 <div
                   key={index}
-                  className="group bg-white rounded-2xl border border-[#2a80b5]/10 hover:border-[#2a80b5]/30 hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden"
+                  className="w-full sm:w-1/2 lg:w-1/3 group relative bg-white/60 backdrop-blur-sm rounded-2xl border border-[#2a80b5]/8 overflow-hidden transform transition-all duration-400 hover:shadow-2xl hover:-translate-y-3"
                 >
-                  <div className="relative h-56 bg-linear-to-br from-[#ebf3fa] to-white overflow-hidden">
+                  <div className="relative h-56 overflow-hidden">
+                    <div className="absolute inset-0 bg-linear-to-br from-[#ebf3fa] to-white" />
                     <Image
                       src={item.image}
                       alt={item.name}
                       fill
-                      className="object-contain p-6 group-hover:scale-110 transition-transform duration-500"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
+                    <div className="absolute top-4 left-4 bg-green-400/80 backdrop-blur rounded-full px-3 py-1 text-xs font-semibold text-white border border-white/10">
+                      Imported
+                    </div>
                   </div>
-                  <div className="p-6 text-center">
-                    <h3 className="text-lg font-bold text-gray-900">
-                      {item.name}
-                    </h3>
+
+                  <div className="p-6 flex flex-col gap-4">
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">
+                        {item.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 mt-3 max-w-prose">
+                        {item.description}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center justify-between mt-2">
+                      <div className="text-xs text-gray-500">
+                        Trusted supplier
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -490,10 +547,13 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-20 bg-white">
+      <section
+        id="gallery"
+        className="py-20 bg-linear-to-br from-[#eef6fb] to-[#f8fbff]"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-5xl font-bold mb-6">
               Our <span className="text-[#2a80b5]">Gallery</span>
             </h2>
             <p className="text-lg text-gray-600">
@@ -503,10 +563,10 @@ export default function Home() {
 
           {/* Opening Ceremony Gallery */}
           <div className="mb-20">
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <Calendar className="w-6 h-6 text-[#2a80b5]" />
-              <h3 className="text-2xl font-bold text-center">
-                <span className="text-[#2a80b5]">Opening Ceremony</span>
+            <div className="flex items-center justify-center gap-3 mb-12">
+              <Calendar className="w-6 h-6 text-[#325cb8]" />
+              <h3 className="text-3xl font-bold text-center">
+                <span className="text-[#325cb8]">Opening Ceremony</span>
               </h3>
             </div>
             <div className="relative max-w-5xl mx-auto">
@@ -552,9 +612,9 @@ export default function Home() {
           {/* Our Team */}
           <div className="mb-20">
             <div className="flex items-center justify-center gap-3 mb-8">
-              <Users className="w-6 h-6 text-[#2a80b5]" />
-              <h3 className="text-2xl font-bold text-center">
-                <span className="text-[#2a80b5]">Our Team</span>
+              <Users className="w-6 h-6 text-[#325cb8]" />
+              <h3 className="text-3xl font-bold text-center">
+                <span className="text-[#325cb8]">Our Team</span>
               </h3>
             </div>
             <div className="max-w-4xl mx-auto">
@@ -581,9 +641,9 @@ export default function Home() {
           {/* Factory Work Gallery */}
           <div>
             <div className="flex items-center justify-center gap-3 mb-8">
-              <Building2 className="w-6 h-6 text-[#2a80b5]" />
-              <h3 className="text-2xl font-bold text-center">
-                <span className="text-[#2a80b5]">Factory & Production</span>
+              <Building2 className="w-6 h-6 text-[#325cb8]" />
+              <h3 className="text-3xl font-bold text-center">
+                <span className="text-[#325cb8]">Factory & Production</span>
               </h3>
             </div>
             <div className="relative max-w-5xl mx-auto">
@@ -631,95 +691,155 @@ export default function Home() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-20 bg-linear-to-b from-white to-[#ebf3fa]"
+        className="py-20 bg-linear-to-b from-[#f3f8fb] to-[#eaf5fb]"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-5xl font-bold mb-4">
               Get In <span className="text-[#2a80b5]">Touch</span>
             </h2>
-            <p className="text-lg text-gray-600">
-              Ready to discuss your air duct requirements? Contact us today!
+            <p className="text-lg text-gray-700">
+              Have a project or need a quote? Reach out we respond quickly.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white/60 backdrop-blur-lg p-8 rounded-2xl border border-[#2a80b5]/10 shadow-xl">
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              {/* Left: Details card */}
+              <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-10 shadow-xl border border-[#2a80b5]/10">
+                <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
+                <p className="text-gray-700 mb-6">
+                  We're happy to help — request a quote or ask about our
+                  products and delivery. Use the quick actions to contact us
+                  instantly.
+                </p>
 
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#2a80b5] rounded-xl flex items-center justify-center shrink-0">
-                    <Phone className="w-6 h-6 text-white" />
+                <dl className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-[#2a80b5] rounded-lg flex items-center justify-center text-white shrink-0">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <dt className="font-semibold">Phone</dt>
+                      <dd className="text-gray-700">
+                        <a
+                          href="tel:0114435953"
+                          className="hover:text-[#2a80b5]"
+                        >
+                          011 4435 953
+                        </a>
+                        <br />
+                        <a
+                          href="tel:0774161678"
+                          className="hover:text-[#2a80b5]"
+                        >
+                          077 416 1678
+                        </a>
+                      </dd>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Phone</h4>
-                    <p className="text-gray-600">0114435953</p>
-                    <p className="text-gray-600">0774161678</p>
-                  </div>
-                </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#2a80b5] rounded-xl flex items-center justify-center shrink-0">
-                    <Factory className="w-6 h-6 text-white" />
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-[#2a80b5] rounded-lg flex items-center justify-center text-white shrink-0">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <dt className="font-semibold">Email</dt>
+                      <dd className="text-gray-700">
+                        <a
+                          href="mailto:info@ceylonairduct.lk"
+                          className="hover:text-[#2a80b5]"
+                        >
+                          sales@ceylonairduct.lk
+                        </a>
+                      </dd>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Factory</h4>
-                    <p className="text-gray-600">538/B, Heenkenda, Ragama</p>
-                  </div>
-                </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#2a80b5] rounded-xl flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-white" />
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-[#2a80b5] rounded-lg flex items-center justify-center text-white shrink-0">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <dt className="font-semibold">Factory & Sales Office</dt>
+                      <dd className="text-gray-700">
+                        538/B, Heenkenda, Ragama · No 1005, Kandy Road, Kelaniya
+                      </dd>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Sales Office</h4>
-                    <p className="text-gray-600">
-                      No 1005, Kandy Road, Kelaniya
-                    </p>
-                  </div>
+                </dl>
+
+
+                <div className="mt-6 flex flex-wrap gap-4">
+                  <a
+                    href="tel:0114435953"
+                    className="inline-flex items-center gap-3 bg-[#2a80b5] text-white px-5 py-3 rounded-full shadow hover:bg-[#236a99]"
+                  >
+                    <Phone className="w-4 h-4" /> Call Now
+                  </a>
+                  <a
+                    href="mailto:info@ceylonairduct.lk"
+                    className="inline-flex items-center gap-3 border-2 border-[#2a80b5] text-[#2a80b5] px-5 py-3 rounded-full shadow-sm hover:bg-[#ebf3fa]"
+                  >
+                    <Mail className="w-4 h-4" /> Email
+                  </a>
+                  <a
+                    href="https://wa.me/94774161678"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 rounded-full shadow"
+                  >
+                    WhatsApp
+                  </a>
                 </div>
               </div>
-            </div>
 
-            <div className="bg-white/60 backdrop-blur-lg p-8 rounded-2xl border border-[#2a80b5]/10 shadow-xl">
-              <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
-              <form className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2a80b5] focus:outline-none focus:ring-2 focus:ring-[#2a80b5]/20 transition-all"
-                />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2a80b5] focus:outline-none focus:ring-2 focus:ring-[#2a80b5]/20 transition-all"
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2a80b5] focus:outline-none focus:ring-2 focus:ring-[#2a80b5]/20 transition-all"
-                />
-                <textarea
-                  placeholder="Your Message"
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2a80b5] focus:outline-none focus:ring-2 focus:ring-[#2a80b5]/20 transition-all resize-none"
-                />
-                <button
-                  type="submit"
-                  className="w-full bg-[#2a80b5] text-white py-3 rounded-xl hover:bg-[#236a99] transition-all font-semibold shadow-lg hover:shadow-xl"
-                >
-                  Send Message
-                </button>
-              </form>
+              {/* Right: CTAs & Hours */}
+              <div className="flex flex-col gap-6">
+                <div className="bg-[#2a80b5] text-white rounded-2xl p-8 shadow-lg">
+                  <h4 className="font-bold text-lg">Request a Quote</h4>
+                  <p className="mt-3 text-white/90">
+                    Send specifications or drawings and we'll reply with a
+                    tailored quote within 24 hours.
+                  </p>
+                  <a
+                    href="mailto:info@ceylonairduct.lk"
+                    className="mt-5 inline-block bg-white text-[#2a80b5] px-5 py-3 rounded-full font-semibold shadow-sm"
+                  >
+                    Request Quote
+                  </a>
+                </div>
+
+                <div className="bg-white rounded-2xl p-8 shadow border border-[#2a80b5]/8">
+                  <h4 className="font-bold">Business Hours</h4>
+                  <ul className="mt-3 text-gray-700 space-y-1">
+                    <li>Mon - Fri: 8:00 AM – 5:00 PM</li>
+                    <li>Saturday: 8:00 AM – 1:00 PM</li>
+                    <li>Sunday: Closed</li>
+                  </ul>
+                </div>
+              <div className="bg-white rounded-2xl p-8 shadow border border-[#2a80b5]/8">
+                  <h4 className="font-bold">Our Sales Office</h4>
+                  
+                {/* Google Map Embed */}
+                <div className="mt-6 rounded-2xl overflow-hidden border border-[#2a80b5]/8">
+                  <iframe
+                    title="Ceylon Air Duct - Factory Location"
+                    src="https://www.google.com/maps?q=538/B,+Heenkenda,+Ragama&z=15&output=embed"
+                    className="w-full h-56"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+          </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Enhanced Footer */}
-      <footer className="bg-linear-to-b from-gray-800 to-gray-900 text-white py-16 relative overflow-hidden">
+      <footer className="bg-linear-to-b from-[#eaf5fb] to-[#dff0f8] text-gray-800 py-16 relative overflow-hidden">
         {/* Decorative Background */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-96 h-96 bg-[#2a80b5] rounded-full blur-3xl" />
@@ -733,15 +853,15 @@ export default function Home() {
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
                 <div>
-                  <h3 className="font-bold text-xl text-white">
+                  <h3 className="font-bold text-xl text-black">
                     CEYLON AIR DUCT
                   </h3>
-                  <p className="text-xs text-gray-400 tracking-wider">
+                  <p className="text-xs text-black tracking-wider">
                     LANKA PVT LTD
                   </p>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              <p className="text-black text-sm leading-relaxed mb-6">
                 Leading manufacturer and supplier of air efficient products in
                 Sri Lanka, delivering top-quality HVAC solutions since
                 inception.
@@ -761,35 +881,35 @@ export default function Home() {
 
             {/* Quick Links */}
             <div>
-              <h3 className="font-bold text-lg mb-6 text-white">Quick Links</h3>
+              <h3 className="font-bold text-lg mb-6 text-black">Quick Links</h3>
               <div className="space-y-3">
                 <button
                   onClick={() => scrollToSection("home")}
-                  className="block text-gray-400 hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
+                  className="block text-black hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
                 >
                   → Home
                 </button>
                 <button
                   onClick={() => scrollToSection("about")}
-                  className="block text-gray-400 hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
+                  className="block text-black hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
                 >
                   → About Us
                 </button>
                 <button
                   onClick={() => scrollToSection("products")}
-                  className="block text-gray-400 hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
+                  className="block text-black hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
                 >
                   → Products & Services
                 </button>
                 <button
                   onClick={() => scrollToSection("gallery")}
-                  className="block text-gray-400 hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
+                  className="block text-black hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
                 >
                   → Gallery
                 </button>
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="block text-gray-400 hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
+                  className="block text-black hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
                 >
                   → Contact
                 </button>
@@ -798,40 +918,40 @@ export default function Home() {
 
             {/* Contact Info */}
             <div>
-              <h3 className="font-bold text-lg mb-6 text-white">
+              <h3 className="font-bold text-lg mb-6 text-black">
                 Contact Info
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Phone size={16} className="text-[#2a80b5] mt-1 shrink-0" />
                   <div>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-gray-800 text-sm">
                       <a
                         href="tel:0114435953"
                         className="hover:text-[#2a80b5] transition-colors"
                       >
-                        0114435953
+                        011 4435 953
                       </a>
                     </p>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-gray-800 text-sm">
                       <a
                         href="tel:0774161678"
                         className="hover:text-[#2a80b5] transition-colors"
                       >
-                        0774161678
+                        077 416 1678
                       </a>
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Factory size={16} className="text-[#2a80b5] mt-1 shrink-0" />
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-800 text-sm">
                     538/B, Heenkenda, Ragama
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin size={16} className="text-[#2a80b5] mt-1 shrink-0" />
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-800 text-sm">
                     No 1005, Kandy Road, Kelaniya
                   </p>
                 </div>
@@ -840,21 +960,21 @@ export default function Home() {
 
             {/* Business Hours & CTA */}
             <div>
-              <h3 className="font-bold text-lg mb-6 text-white">
+              <h3 className="font-bold text-lg mb-6 text-black">
                 Business Hours
               </h3>
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-400">Monday - Friday</span>
-                  <span className="text-white">8:00 AM - 5:00 PM</span>
+                  <span className="text-gray-600">Monday - Friday</span>
+                  <span className="text-black">8:00 AM - 5:00 PM</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-400">Saturday</span>
-                  <span className="text-white">8:00 AM - 1:00 PM</span>
+                  <span className="text-gray-600">Saturday</span>
+                  <span className="text-black">8:00 AM - 1:00 PM</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-400">Sunday</span>
-                  <span className="text-white">Closed</span>
+                  <span className="text-gray-600">Sunday</span>
+                  <span className="text-black">Closed</span>
                 </div>
               </div>
               <button
@@ -867,9 +987,9 @@ export default function Home() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-gray-800 pt-8">
+          <div className="pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-gray-400 text-sm text-center md:text-left">
+              <p className="text-gray-800 text-sm text-center md:text-left">
                 © 2025 Ceylon Air Duct Lanka Pvt Ltd. All rights reserved.
               </p>
             </div>
