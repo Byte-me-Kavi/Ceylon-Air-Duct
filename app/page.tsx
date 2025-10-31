@@ -20,6 +20,7 @@ import {
   Users,
   Calendar,
 } from "lucide-react";
+import Animated from "./components/Animated";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -331,7 +332,7 @@ export default function Home() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in">
+            <Animated variant="fadeUp" className="space-y-6">
               <div className="inline-block px-4 py-2 bg-[#2a80b5]/10 rounded-full">
                 <p className="text-[#2a80b5] font-semibold text-sm">
                   AIR EFFICIENT PRODUCTS
@@ -360,22 +361,22 @@ export default function Home() {
                   Get Quote
                 </button>
               </div>
-            </div>
+            </Animated>
 
-            <div className="relative">
+            <Animated variant="photo" className="relative">
               <div className="absolute inset-0 bg-linear-to-r from-[#2a80b5] to-[#17568c] rounded-3xl blur-xl opacity-90 animate-pulse" />
               {/* Responsive image container: shorter on large screens */}
               <div className="relative bg-white/40 backdrop-blur-xl rounded-3xl p-1 border border-white/20 shadow-2xl overflow-hidden">
                 <div className="relative h-56 sm:h-80 lg:h-120 rounded-2xl overflow-hidden">
                   <Image
-                    src="/images/hero.jpg"
+                    src="/images/fac.jpg"
                     alt="Ceylon Air Duct"
                     fill
                     className="object-cover w-full h-full"
                   />
                 </div>
               </div>
-            </div>
+            </Animated>
           </div>
         </div>
       </section>
@@ -400,16 +401,22 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-linear-to-br from-[#ebf3fa] to-white p-8 rounded-2xl border border-[#2a80b5]/10 hover:shadow-xl transition-all hover:-translate-y-2">
+            <Animated
+              variant="fadeUp"
+              className="bg-linear-to-br from-[#ebf3fa] to-white p-8 rounded-2xl border border-[#2a80b5]/10 hover:shadow-xl transition-all hover:-translate-y-2"
+            >
               <Factory className="w-12 h-12 text-[#2a80b5] mb-4" />
               <h3 className="text-xl font-bold mb-3">CAD Factory</h3>
               <p className="text-gray-600 mb-4">538/B, Heenkenda, Ragama</p>
               <p className="text-sm text-gray-500">
                 Modern manufacturing facility equipped with advanced machinery
               </p>
-            </div>
+            </Animated>
 
-            <div className="bg-linear-to-br from-[#ebf3fa] to-white p-8 rounded-2xl border border-[#2a80b5]/10 hover:shadow-xl transition-all hover:-translate-y-2">
+            <Animated
+              variant="fadeUp"
+              className="bg-linear-to-br from-[#ebf3fa] to-white p-8 rounded-2xl border border-[#2a80b5]/10 hover:shadow-xl transition-all hover:-translate-y-2"
+            >
               <MapPin className="w-12 h-12 text-[#2a80b5] mb-4" />
               <h3 className="text-xl font-bold mb-3">Sales Office</h3>
               <p className="text-gray-600 mb-4">
@@ -418,14 +425,17 @@ export default function Home() {
               <p className="text-sm text-gray-500">
                 Visit our showroom to explore our complete product range
               </p>
-            </div>
+            </Animated>
 
-            <div className="bg-linear-to-br from-[#ebf3fa] to-white p-8 rounded-2xl border border-[#2a80b5]/10 hover:shadow-xl transition-all hover:-translate-y-2">
+            <Animated
+              variant="fadeUp"
+              className="bg-linear-to-br from-[#ebf3fa] to-white p-8 rounded-2xl border border-[#2a80b5]/10 hover:shadow-xl transition-all hover:-translate-y-2"
+            >
               <Phone className="w-12 h-12 text-[#2a80b5] mb-4" />
               <h3 className="text-xl font-bold mb-3">Quick Contact</h3>
               <p className="text-gray-600 mb-2">0114435953</p>
               <p className="text-gray-600">0774161678</p>
-            </div>
+            </Animated>
           </div>
         </div>
       </section>
@@ -467,8 +477,9 @@ export default function Home() {
             </h3>
             <div className="flex flex-wrap gap-8 justify-center">
               {products.map((product, index) => (
-                <div
+                <Animated
                   key={index}
+                  variant="fadeUp"
                   className="w-full sm:w-1/2 md:w-[calc(30%-1rem)] lg:w-[calc(30%-1rem)] group relative bg-white/60 backdrop-blur-sm rounded-2xl border border-[#2a80b5]/8 overflow-hidden transform transition-all duration-400 hover:shadow-2xl hover:-translate-y-3"
                 >
                   <div className="relative h-48 overflow-hidden">
@@ -501,7 +512,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </Animated>
               ))}
             </div>
           </div>
@@ -514,8 +525,9 @@ export default function Home() {
             </h3>
             <div className="flex flex-wrap gap-8 justify-center">
               {imports.map((item, index) => (
-                <div
+                <Animated
                   key={index}
+                  variant="fadeUp"
                   className="w-full sm:w-1/2 md:w-[calc(30%-1rem)] lg:w-[calc(30%-1rem)] group relative bg-white/60 backdrop-blur-sm rounded-2xl border border-[#2a80b5]/8 overflow-hidden transform transition-all duration-400 hover:shadow-2xl hover:-translate-y-3"
                 >
                   <div className="relative h-56 overflow-hidden">
@@ -547,7 +559,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </Animated>
               ))}
             </div>
           </div>
@@ -585,7 +597,10 @@ export default function Home() {
                 <div className="flex">
                   {openingPhotos.map((photo, index) => (
                     <div key={index} className="flex-[0_0_100%] min-w-0">
-                      <div className="relative h-[500px] bg-linear-to-br from-[#ebf3fa] to-white">
+                      <Animated
+                        variant="photo"
+                        className="relative h-[500px] bg-linear-to-br from-[#ebf3fa] to-white"
+                      >
                         <Image
                           src={photo}
                           alt={`Opening Ceremony ${index + 1}`}
@@ -597,7 +612,7 @@ export default function Home() {
                             Grand Opening Celebration
                           </p>
                         </div>
-                      </div>
+                      </Animated>
                     </div>
                   ))}
                 </div>
@@ -626,7 +641,10 @@ export default function Home() {
               </h3>
             </div>
             <div className="max-w-4xl mx-auto">
-              <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
+              <Animated
+                variant="photo"
+                className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl group"
+              >
                 <Image
                   src="/images/team.jpg"
                   alt="Ceylon Air Duct Team"
@@ -642,7 +660,7 @@ export default function Home() {
                     duct solutions
                   </p>
                 </div>
-              </div>
+              </Animated>
             </div>
           </div>
 
@@ -662,7 +680,10 @@ export default function Home() {
                 <div className="flex">
                   {workPhotos.map((photo, index) => (
                     <div key={index} className="flex-[0_0_100%] min-w-0">
-                      <div className="relative h-[500px] bg-linear-to-br from-[#ebf3fa] to-white">
+                      <Animated
+                        variant="photo"
+                        className="relative h-[500px] bg-linear-to-br from-[#ebf3fa] to-white"
+                      >
                         <Image
                           src={photo}
                           alt={`Factory Work ${index + 1}`}
@@ -674,7 +695,7 @@ export default function Home() {
                             State-of-the-art Manufacturing
                           </p>
                         </div>
-                      </div>
+                      </Animated>
                     </div>
                   ))}
                 </div>
@@ -714,7 +735,10 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-start">
               {/* Left: Details card */}
-              <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-12 shadow-xl border border-[#2a80b5]/10">
+              <Animated
+                variant="fadeUp"
+                className="bg-white/80 backdrop-blur-lg rounded-2xl p-12 shadow-xl border border-[#2a80b5]/10"
+              >
                 <h3 className="text-3xl font-bold mb-8 text-[#325cb8]">
                   Contact Information
                 </h3>
@@ -807,11 +831,14 @@ export default function Home() {
                     WhatsApp
                   </a>
                 </div>
-              </div>
+              </Animated>
 
               {/* Right: CTAs & Hours */}
               <div className="flex flex-col gap-6">
-                <div className="bg-[#2a80b5] text-white rounded-2xl p-8 shadow-lg">
+                <Animated
+                  variant="fadeUp"
+                  className="bg-[#2a80b5] text-white rounded-2xl p-8 shadow-lg"
+                >
                   <h4 className="font-bold text-lg">Request a Quote</h4>
                   <p className="mt-3 text-white/90">
                     Send specifications or drawings and we&apos;ll reply with a
@@ -823,7 +850,7 @@ export default function Home() {
                   >
                     Request Quote
                   </a>
-                </div>
+                </Animated>
 
                 <div className="bg-white rounded-2xl p-8 shadow border border-[#2a80b5]/8">
                   <h4 className="font-bold">Business Hours</h4>
@@ -833,7 +860,10 @@ export default function Home() {
                     <li>Sunday: Closed</li>
                   </ul>
                 </div>
-                <div className="bg-white rounded-2xl p-8 shadow border border-[#2a80b5]/8">
+                <Animated
+                  variant="photo"
+                  className="bg-white rounded-2xl p-8 shadow border border-[#2a80b5]/8"
+                >
                   <h4 className="font-bold">Our Sales Office</h4>
 
                   {/* Google Map Embed */}
@@ -846,7 +876,7 @@ export default function Home() {
                       referrerPolicy="no-referrer-when-downgrade"
                     />
                   </div>
-                </div>
+                </Animated>
               </div>
             </div>
           </div>
@@ -863,7 +893,11 @@ export default function Home() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Main Footer Content */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <Animated
+            variant="fadeUp"
+            stagger
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
+          >
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
@@ -997,7 +1031,7 @@ export default function Home() {
                 Request a Quote
               </button>
             </div>
-          </div>
+          </Animated>
 
           {/* Bottom Bar */}
           <div className="pt-8">
