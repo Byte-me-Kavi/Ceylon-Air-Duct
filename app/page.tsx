@@ -81,7 +81,7 @@ export default function Home() {
       icon: Grid3x3,
       image: "/images/Square-Ducts.png",
       description:
-        "Precision-fabricated square ductwork — corrosion-resistant, dimensionally accurate, and engineered for airtight installations in commercial and industrial HVAC systems.",
+        "Precision-fabricated square ductwork corrosion-resistant, dimensionally accurate, and engineered for airtight installations in commercial and industrial HVAC systems.",
     },
     {
       name: "Spiral Ducts",
@@ -102,7 +102,7 @@ export default function Home() {
       icon: Volume2,
       image: "/images/Volume-Control-Dampers.png",
       description:
-        "Robust VCDs with tight sealing and smooth actuation — ideal for zoning, balancing, and reliable airflow control in duct networks.",
+        "Robust VCDs with tight sealing and smooth actuation ideal for zoning, balancing, and reliable airflow control in duct networks.",
     },
     {
       name: "Sound Attenuators",
@@ -126,14 +126,14 @@ export default function Home() {
       icon: FileText,
       image: "/images/Galvanized-Coil.png",
       description:
-        "Precision-rolled galvanized coil for large-scale production — consistent thickness and excellent formability.",
+        "Precision-rolled galvanized coil for large-scale production consistent thickness and excellent formability.",
     },
     {
       name: "Disc Valves",
       icon: Grid3x3,
       image: "/images/Disc-Valves.png",
       description:
-        "Durable disc valves for dampening and flow isolation — designed for reliable operation in ventilation systems.",
+        "Durable disc valves for dampening and flow isolation designed for reliable operation in ventilation systems.",
     },
     {
       name: "Four Way Diffusers",
@@ -147,7 +147,7 @@ export default function Home() {
       icon: FileText,
       image: "/images/Insulation-material.png",
       description:
-        "Thermal and acoustic insulation materials for duct lining and building insulation — improves energy efficiency and reduces noise in HVAC systems.",
+        "Thermal and acoustic insulation materials for duct lining and building insulation improves energy efficiency and reduces noise in HVAC systems.",
     },
   ];
 
@@ -339,7 +339,7 @@ export default function Home() {
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 Premium Air Duct Solutions for{" "}
-                <span className="text-[#2a80b5]">Sri Lanka</span>
+                <span className="text-[#2a80b5]">HVAC Projects</span>
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Leading manufacturer and supplier of high-quality air duct
