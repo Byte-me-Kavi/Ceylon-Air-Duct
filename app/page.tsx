@@ -79,7 +79,7 @@ export default function Home() {
     {
       name: "Square Ducts",
       icon: Grid3x3,
-      image: "/images/Square-Ducts.jpg",
+      image: "/images/Square-Ducts.png",
       description:
         "Precision-fabricated square ductwork — corrosion-resistant, dimensionally accurate, and engineered for airtight installations in commercial and industrial HVAC systems.",
     },
@@ -93,21 +93,21 @@ export default function Home() {
     {
       name: "Grills and Diffusers",
       icon: Grid3x3,
-      image: "/images/Grills-and-Diffusers.jpeg",
+      image: "/images/Grills-and-Diffusers.png",
       description:
         "Architectural grills and precision diffusers designed for even air distribution, noise control, and a clean aesthetic finish.",
     },
     {
       name: "Volume Control Dampers",
       icon: Volume2,
-      image: "/images/Volume-Control-Dampers.jpg",
+      image: "/images/Volume-Control-Dampers.png",
       description:
         "Robust VCDs with tight sealing and smooth actuation — ideal for zoning, balancing, and reliable airflow control in duct networks.",
     },
     {
       name: "Sound Attenuators",
       icon: Volume2,
-      image: "/images/Sound-Attenuators.jpg",
+      image: "/images/Sound-Attenuators.png",
       description:
         "Engineered acoustic attenuators that reduce fan and system noise while preserving airflow efficiency — suitable for sensitive commercial spaces.",
     },
@@ -117,7 +117,7 @@ export default function Home() {
     {
       name: "Galvanized Sheet",
       icon: FileText,
-      image: "/images/Galvanized-Sheet.jpeg",
+      image: "/images/Galvanized-Sheet.png",
       description:
         "High-grade galvanized sheets with uniform coating for durable fabrication and long-term corrosion protection.",
     },
@@ -131,16 +131,23 @@ export default function Home() {
     {
       name: "Disc Valves",
       icon: Grid3x3,
-      image: "/images/Disc-Valves.jpg",
+      image: "/images/Disc-Valves.png",
       description:
         "Durable disc valves for dampening and flow isolation — designed for reliable operation in ventilation systems.",
     },
     {
       name: "Four Way Diffusers",
       icon: Grid3x3,
-      image: "/images/Four-Way-Diffusers.jpg",
+      image: "/images/Four-Way-Diffusers.png",
       description:
         "High-performance four-way diffusers for uniform airflow distribution in large open-ceiling spaces and atriums.",
+    },
+    {
+      name: "Insulation Material",
+      icon: FileText,
+      image: "/images/Insulation-material.png",
+      description:
+        "Thermal and acoustic insulation materials for duct lining and building insulation — improves energy efficiency and reduces noise in HVAC systems.",
     },
   ];
 
@@ -470,7 +477,7 @@ export default function Home() {
                       src={product.image}
                       alt={product.name}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="object-contain group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute top-4 left-4 bg-green-500/90 backdrop-blur rounded-full px-3 py-1 text-xs font-semibold text-white border border-white/10">
                       Manufactured
@@ -509,7 +516,7 @@ export default function Home() {
               {imports.map((item, index) => (
                 <div
                   key={index}
-                  className="w-full sm:w-1/2 lg:w-1/3 group relative bg-white/60 backdrop-blur-sm rounded-2xl border border-[#2a80b5]/8 overflow-hidden transform transition-all duration-400 hover:shadow-2xl hover:-translate-y-3"
+                  className="w-full sm:w-1/2 md:w-[calc(30%-1rem)] lg:w-[calc(30%-1rem)] group relative bg-white/60 backdrop-blur-sm rounded-2xl border border-[#2a80b5]/8 overflow-hidden transform transition-all duration-400 hover:shadow-2xl hover:-translate-y-3"
                 >
                   <div className="relative h-56 overflow-hidden">
                     <div className="absolute inset-0 bg-linear-to-br from-[#ebf3fa] to-white" />
@@ -517,7 +524,7 @@ export default function Home() {
                       src={item.image}
                       alt={item.name}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="object-contain group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute top-4 left-4 bg-green-500/90 backdrop-blur rounded-full px-3 py-1 text-xs font-semibold text-white border border-white/10">
                       Imported
@@ -753,7 +760,7 @@ export default function Home() {
                           href="mailto:info@ceylonairduct.lk"
                           className="hover:text-[#2a80b5]"
                         >
-                          sales@ceylonairduct.lk
+                          sales@ceylonairduct.com
                         </a>
                       </dd>
                     </div>
@@ -811,7 +818,7 @@ export default function Home() {
                     tailored quote within 24 hours.
                   </p>
                   <a
-                    href="mailto:info@ceylonairduct.lk"
+                    href="mailto:info@ceylonairduct.com"
                     className="mt-5 inline-block bg-white text-[#2a80b5] px-5 py-3 rounded-full font-semibold shadow-sm"
                   >
                     Request Quote
@@ -864,9 +871,7 @@ export default function Home() {
                   <h3 className="font-bold text-xl text-black">
                     CEYLON AIR DUCT
                   </h3>
-                  <p className="text-xs text-black tracking-wider">
-                    LANKA PVT LTD
-                  </p>
+                  <p className="text-xs text-black tracking-wider">PVT LTD</p>
                 </div>
               </div>
               <p className="text-black text-sm leading-relaxed mb-6">
@@ -998,7 +1003,7 @@ export default function Home() {
           <div className="pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-gray-800 text-sm text-center md:text-left">
-                © 2025 Ceylon Air Duct Lanka Pvt Ltd. All rights reserved.
+                © 2025 Ceylon Air Duct Pvt Ltd. All rights reserved.
               </p>
             </div>
           </div>
