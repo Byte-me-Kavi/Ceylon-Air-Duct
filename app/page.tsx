@@ -712,8 +712,9 @@ export default function Home() {
                   Contact Information
                 </h3>
                 <p className="text-gray-700 mb-10">
-                  We&apos;re happy to help request a quote or ask about our products
-                  and delivery. Use the quick actions to contact us instantly.
+                  We&apos;re happy to help request a quote or ask about our
+                  products and delivery. Use the quick actions to contact us
+                  instantly.
                 </p>
 
                 <dl className="space-y-8">
