@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -199,34 +199,34 @@ export default function Home() {
             <div className="hidden lg:flex items-center gap-2">
               <button
                 onClick={() => scrollToSection("home")}
-                className="px-4 py-2 text-gray-700 hover:text-[#2a80b5] transition-all font-medium rounded-lg hover:bg-[#ebf3fa]/50 relative group"
+                className="px-4 py-2 text-gray-700 hover:text-[#2a80b5] transition-colors duration-200 font-medium rounded-lg hover:bg-[#ebf3fa]/20 relative group overflow-hidden"
               >
                 Home
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#2a80b5] group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#2a80b5] transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300" />
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="px-4 py-2 text-gray-700 hover:text-[#2a80b5] transition-all font-medium rounded-lg hover:bg-[#ebf3fa]/50 relative group"
+                className="px-4 py-2 text-gray-700 hover:text-[#2a80b5] transition-colors duration-200 font-medium rounded-lg hover:bg-[#ebf3fa]/20 relative group overflow-hidden"
               >
                 About
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#2a80b5] group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#2a80b5] transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300" />
               </button>
               <button
                 onClick={() => scrollToSection("products")}
-                className="px-4 py-2 text-gray-700 hover:text-[#2a80b5] transition-all font-medium rounded-lg hover:bg-[#ebf3fa]/50 relative group"
+                className="px-4 py-2 text-gray-700 hover:text-[#2a80b5] transition-colors duration-200 font-medium rounded-lg hover:bg-[#ebf3fa]/20 relative group overflow-hidden"
               >
                 Products
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#2a80b5] group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#2a80b5] transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300" />
               </button>
               <button
                 onClick={() => scrollToSection("gallery")}
-                className="px-4 py-2 text-gray-700 hover:text-[#2a80b5] transition-all font-medium rounded-lg hover:bg-[#ebf3fa]/50 relative group"
+                className="px-4 py-2 text-gray-700 hover:text-[#2a80b5] transition-colors duration-200 font-medium rounded-lg hover:bg-[#ebf3fa]/20 relative group overflow-hidden"
               >
                 Gallery
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#2a80b5] group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#2a80b5] transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300" />
               </button>
               <div className="ml-4 flex items-center gap-3">
-                <a
+                <Link
                   href="tel:0114435953"
                   className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:text-[#2a80b5] transition-colors"
                 >
@@ -234,7 +234,7 @@ export default function Home() {
                   <span className="hidden text-red-600 xl:inline">
                     011 4435 953
                   </span>
-                </a>
+                </Link>
                 <button
                   onClick={() => scrollToSection("contact")}
                   className="bg-[#2a80b5] text-white px-6 py-2.5 rounded-full hover:bg-[#236a99] transition-all hover:scale-105 hover:shadow-lg font-semibold"
@@ -244,6 +244,14 @@ export default function Home() {
               </div>
             </div>
 
+            <a
+              href="tel:0114435953"
+              className="lg:hidden absolute left-1/2 top-12 transform -translate-x-1/2 z-50 flex items-center gap-3 text-red-700 hover:text-[#2a80b5] transition-colors"
+              aria-label="Call 011 4435 953"
+            >
+              <Phone size={18} className="text-red-700" />
+              <span>011 4435 953</span>
+            </a>
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -266,42 +274,35 @@ export default function Home() {
           <div className="container mx-auto px-4 py-6 flex flex-col gap-3">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-left px-4 py-3 text-gray-700 hover:text-[#2a80b5] hover:bg-[#ebf3fa]/50 font-medium rounded-lg transition-all"
+              className="text-left px-4 py-3 text-gray-700 hover:text-[#2a80b5] hover:bg-[#ebf3fa]/20 font-medium rounded-lg transition-colors duration-150"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-left px-4 py-3 text-gray-700 hover:text-[#2a80b5] hover:bg-[#ebf3fa]/50 font-medium rounded-lg transition-all"
+              className="text-left px-4 py-3 text-gray-700 hover:text-[#2a80b5] hover:bg-[#ebf3fa]/20 font-medium rounded-lg transition-colors duration-150"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("products")}
-              className="text-left px-4 py-3 text-gray-700 hover:text-[#2a80b5] hover:bg-[#ebf3fa]/50 font-medium rounded-lg transition-all"
+              className="text-left px-4 py-3 text-gray-700 hover:text-[#2a80b5] hover:bg-[#ebf3fa]/20 font-medium rounded-lg transition-colors duration-150"
             >
               Products
             </button>
             <button
               onClick={() => scrollToSection("gallery")}
-              className="text-left px-4 py-3 text-gray-700 hover:text-[#2a80b5] hover:bg-[#ebf3fa]/50 font-medium rounded-lg transition-all"
+              className="text-left px-4 py-3 text-gray-700 hover:text-[#2a80b5] hover:bg-[#ebf3fa]/20 font-medium rounded-lg transition-colors duration-150"
             >
               Gallery
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-left px-4 py-3 text-gray-700 hover:text-[#2a80b5] hover:bg-[#ebf3fa]/50 font-medium rounded-lg transition-all"
+              className="text-left px-4 py-3 text-gray-700 hover:text-[#2a80b5] hover:bg-[#ebf3fa]/20 font-medium rounded-lg transition-colors duration-150"
             >
               Contact
             </button>
             <div className="border-t border-gray-200 mt-2 pt-4 px-4">
-              <a
-                href="tel:0114435953"
-                className="flex items-center gap-3 text-gray-600 hover:text-[#2a80b5] mb-3 transition-colors"
-              >
-                <Phone size={18} />
-                <span>0114435953</span>
-              </a>
               <button
                 onClick={() => scrollToSection("contact")}
                 className="w-full bg-[#2a80b5] text-white px-6 py-3 rounded-full hover:bg-[#236a99] transition-all font-semibold"
@@ -321,7 +322,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-linear-to-br from-[#ebf3fa] via-white to-[#ebf3fa]" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJhODBiNSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-50" />
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
               <div className="inline-block px-4 py-2 bg-[#2a80b5]/10 rounded-full">
@@ -357,7 +358,7 @@ export default function Home() {
             <div className="relative">
               <div className="absolute inset-0 bg-linear-to-r from-[#2a80b5] to-[#17568c] rounded-3xl blur-xl opacity-90 animate-pulse" />
               {/* Responsive image container: shorter on large screens */}
-              <div className="relative bg-white/40 backdrop-blur-xl rounded-3xl p-6 border border-white/20 shadow-2xl overflow-hidden">
+              <div className="relative bg-white/40 backdrop-blur-xl rounded-3xl p-1 border border-white/20 shadow-2xl overflow-hidden">
                 <div className="relative h-56 sm:h-80 lg:h-120 rounded-2xl overflow-hidden">
                   <Image
                     src="/images/hero.jpg"
@@ -471,7 +472,7 @@ export default function Home() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 left-4 bg-green-400/80 backdrop-blur rounded-full px-3 py-1 text-xs font-semibold text-white border border-white/10">
+                    <div className="absolute top-4 left-4 bg-green-500/90 backdrop-blur rounded-full px-3 py-1 text-xs font-semibold text-white border border-white/10">
                       Manufactured
                     </div>
                     <div className="absolute inset-0 bg-linear-to-t from-black/0 to-black/10 opacity-40 pointer-events-none" />
@@ -518,7 +519,7 @@ export default function Home() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 left-4 bg-green-400/80 backdrop-blur rounded-full px-3 py-1 text-xs font-semibold text-white border border-white/10">
+                    <div className="absolute top-4 left-4 bg-green-500/90 backdrop-blur rounded-full px-3 py-1 text-xs font-semibold text-white border border-white/10">
                       Imported
                     </div>
                   </div>
@@ -706,17 +707,18 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-start">
               {/* Left: Details card */}
-              <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-10 shadow-xl border border-[#2a80b5]/10">
-                <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
-                <p className="text-gray-700 mb-6">
-                  We're happy to help — request a quote or ask about our
-                  products and delivery. Use the quick actions to contact us
-                  instantly.
+              <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-12 shadow-xl border border-[#2a80b5]/10">
+                <h3 className="text-3xl font-bold mb-8 text-[#325cb8]">
+                  Contact Information
+                </h3>
+                <p className="text-gray-700 mb-10">
+                  We&apos;re happy to help request a quote or ask about our products
+                  and delivery. Use the quick actions to contact us instantly.
                 </p>
 
-                <dl className="space-y-4">
+                <dl className="space-y-8">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#2a80b5] rounded-lg flex items-center justify-center text-white shrink-0">
+                    <div className="w-12 h-12 mt-4 bg-[#2a80b5] rounded-lg flex items-center justify-center text-white shrink-0">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
@@ -739,7 +741,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-4 mb-10">
                     <div className="w-12 h-12 bg-[#2a80b5] rounded-lg flex items-center justify-center text-white shrink-0">
                       <Mail className="w-5 h-5" />
                     </div>
@@ -756,39 +758,44 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#2a80b5] rounded-lg flex items-center justify-center text-white shrink-0">
+                  <div className="flex items-start gap-4 mb-8">
+                    <div className="w-12 h-12 mt-4 bg-[#2a80b5] rounded-lg flex items-center justify-center text-white shrink-0">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
                       <dt className="font-semibold">Factory & Sales Office</dt>
                       <dd className="text-gray-700">
-                        538/B, Heenkenda, Ragama · No 1005, Kandy Road, Kelaniya
+                        <p className="mt-1">
+                          Factory - 538/B, Heenkenda, Ragama
+                        </p>
+                        <p className="mt-1">
+                          Sales Office - No 1005, Kandy Road, Kelaniya
+                        </p>
                       </dd>
                     </div>
                   </div>
                 </dl>
 
-
-                <div className="mt-6 flex flex-wrap gap-4">
+                <div className="mt-10 flex flex-wrap gap-8">
                   <a
                     href="tel:0114435953"
-                    className="inline-flex items-center gap-3 bg-[#2a80b5] text-white px-5 py-3 rounded-full shadow hover:bg-[#236a99]"
+                    className="w-full sm:w-auto flex justify-center sm:inline-flex sm:justify-start items-center gap-3 bg-[#2a80b5] text-white px-6 py-3 rounded-full shadow hover:bg-[#236a99]"
                   >
-                    <Phone className="w-4 h-4" /> Call Now
+                    <Phone className="w-6 h-4" /> Call Now
                   </a>
                   <a
                     href="mailto:info@ceylonairduct.lk"
-                    className="inline-flex items-center gap-3 border-2 border-[#2a80b5] text-[#2a80b5] px-5 py-3 rounded-full shadow-sm hover:bg-[#ebf3fa]"
+                    className="w-full sm:w-auto flex justify-center sm:inline-flex sm:justify-start items-center gap-3 border-2 border-[#2a80b5] text-[#2a80b5] px-6 py-3 rounded-full shadow-sm hover:bg-[#ebf3fa]"
                   >
-                    <Mail className="w-4 h-4" /> Email
+                    <Mail className="w-6 h-4" /> Email
                   </a>
                   <a
                     href="https://wa.me/94774161678"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 rounded-full shadow"
+                    className="w-full sm:w-auto flex justify-center sm:inline-flex sm:justify-start items-center gap-3 bg-[#25D366] text-white px-6 py-3 rounded-full shadow"
                   >
+                    <Phone className="w-6 h-4" />
                     WhatsApp
                   </a>
                 </div>
@@ -799,7 +806,7 @@ export default function Home() {
                 <div className="bg-[#2a80b5] text-white rounded-2xl p-8 shadow-lg">
                   <h4 className="font-bold text-lg">Request a Quote</h4>
                   <p className="mt-3 text-white/90">
-                    Send specifications or drawings and we'll reply with a
+                    Send specifications or drawings and we&apos;ll reply with a
                     tailored quote within 24 hours.
                   </p>
                   <a
@@ -818,20 +825,20 @@ export default function Home() {
                     <li>Sunday: Closed</li>
                   </ul>
                 </div>
-              <div className="bg-white rounded-2xl p-8 shadow border border-[#2a80b5]/8">
+                <div className="bg-white rounded-2xl p-8 shadow border border-[#2a80b5]/8">
                   <h4 className="font-bold">Our Sales Office</h4>
-                  
-                {/* Google Map Embed */}
-                <div className="mt-6 rounded-2xl overflow-hidden border border-[#2a80b5]/8">
-                  <iframe
-                    title="Ceylon Air Duct - Factory Location"
-                    src="https://www.google.com/maps?q=538/B,+Heenkenda,+Ragama&z=15&output=embed"
-                    className="w-full h-56"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
+
+                  {/* Google Map Embed */}
+                  <div className="mt-6 rounded-2xl overflow-hidden border border-[#2a80b5]/8">
+                    <iframe
+                      title="Ceylon Air Duct - Factory Location"
+                      src="https://www.google.com/maps?q=538/B,+Heenkenda,+Ragama&z=15&output=embed"
+                      className="w-full h-56"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
+                  </div>
                 </div>
-          </div>
               </div>
             </div>
           </div>
@@ -839,7 +846,7 @@ export default function Home() {
       </section>
 
       {/* Enhanced Footer */}
-      <footer className="bg-linear-to-b from-[#eaf5fb] to-[#dff0f8] text-gray-800 py-16 relative overflow-hidden">
+      <footer className="bg-linear-to-b from-[#fdfeff] to-[#fdfeff] text-gray-800 py-16 relative overflow-hidden">
         {/* Decorative Background */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-96 h-96 bg-[#2a80b5] rounded-full blur-3xl" />
@@ -887,31 +894,31 @@ export default function Home() {
                   onClick={() => scrollToSection("home")}
                   className="block text-black hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
                 >
-                  → Home
+                  Home
                 </button>
                 <button
                   onClick={() => scrollToSection("about")}
                   className="block text-black hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
                 >
-                  → About Us
+                  About Us
                 </button>
                 <button
                   onClick={() => scrollToSection("products")}
                   className="block text-black hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
                 >
-                  → Products & Services
+                  Products & Services
                 </button>
                 <button
                   onClick={() => scrollToSection("gallery")}
                   className="block text-black hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
                 >
-                  → Gallery
+                  Gallery
                 </button>
                 <button
                   onClick={() => scrollToSection("contact")}
                   className="block text-black hover:text-[#2a80b5] transition-colors text-sm hover:translate-x-1 duration-200"
                 >
-                  → Contact
+                  Contact
                 </button>
               </div>
             </div>
@@ -923,7 +930,7 @@ export default function Home() {
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <Phone size={16} className="text-[#2a80b5] mt-1 shrink-0" />
+                  <Phone size={16} className="text-[#2a80b5] mt-3 shrink-0" />
                   <div>
                     <p className="text-gray-800 text-sm">
                       <a
