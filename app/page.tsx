@@ -178,7 +178,7 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute inset-0 rounded-xl blur-lg group-hover:blur-xl transition-all" />
                 <Image
-                  src="/images/ll.png"
+                  src="/images/logo-no-bg.png"
                   alt="Ceylon Air Duct Logo"
                   width={80}
                   height={80}
