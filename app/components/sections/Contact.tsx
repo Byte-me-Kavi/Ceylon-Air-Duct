@@ -1,5 +1,6 @@
 import { Clock, Factory, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import Animated from "../Animated";
+import EmailAction from "../EmailAction";
 import { contact } from "../../data/site";
 
 export default function Contact() {
@@ -25,9 +26,14 @@ export default function Contact() {
             </Row>
             <Row icon={<Mail className="h-5 w-5" />} label="Email">
               {contact.emails.map((e) => (
-                <a key={e} href={`mailto:${e}`} className="block break-all hover:text-brand-strong">
+                <EmailAction
+                  key={e}
+                  email={e}
+                  wrapperClassName="block"
+                  className="break-all hover:text-brand-strong"
+                >
                   {e}
-                </a>
+                </EmailAction>
               ))}
             </Row>
             <Row icon={<Factory className="h-5 w-5" />} label="Factory">
@@ -63,12 +69,13 @@ export default function Contact() {
             >
               <MessageCircle className="h-4 w-4 text-brand-strong" /> WhatsApp
             </a>
-            <a
-              href={`mailto:${contact.emails[0]}`}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-steel-300 bg-white px-6 py-3 font-semibold text-ink transition hover:border-steel-400 active:scale-[0.98]"
+            <EmailAction
+              email={contact.emails[0]}
+              wrapperClassName="block"
+              className="flex w-full items-center justify-center gap-2 rounded-full border border-steel-300 bg-white px-6 py-3 font-semibold text-ink transition hover:border-steel-400 active:scale-[0.98]"
             >
               <Mail className="h-4 w-4 text-brand-strong" /> Email us
-            </a>
+            </EmailAction>
           </div>
         </Animated>
 
@@ -81,12 +88,17 @@ export default function Contact() {
               Send your specifications or drawings and we&apos;ll reply with a
               tailored quote within 24 hours.
             </p>
-            <a
-              href={`mailto:${contact.quoteEmail}?subject=Quote%20request`}
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-white px-6 py-3 font-semibold text-brand-strong transition hover:bg-brand-tint active:scale-[0.98]"
+            <EmailAction
+              email={contact.quoteEmail}
+              subject="Quote request"
+              wrapperClassName="mt-6 inline-block"
+              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 font-semibold text-brand-strong transition hover:bg-brand-tint active:scale-[0.98]"
             >
               Email your drawings
-            </a>
+            </EmailAction>
+            <p className="mt-4 text-sm text-white/80">
+              Or send them to {contact.quoteEmail}
+            </p>
           </div>
 
           <div className="overflow-hidden rounded-xl border border-steel-200 bg-white">

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { contact, navLinks } from "../../data/site";
+import EmailAction from "../EmailAction";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -45,9 +46,13 @@ export default function Footer() {
               </li>
             ))}
             <li>
-              <a href={`mailto:${contact.emails[0]}`} className="transition-colors hover:text-brand-strong">
+              <EmailAction
+                email={contact.emails[0]}
+                placement="top"
+                className="transition-colors hover:text-brand-strong"
+              >
                 {contact.emails[0]}
-              </a>
+              </EmailAction>
             </li>
             <li>Factory: {contact.factory}</li>
             <li>Sales office: {contact.salesOffice}</li>

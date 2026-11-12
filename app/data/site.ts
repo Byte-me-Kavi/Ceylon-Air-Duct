@@ -16,7 +16,7 @@ export const contact = {
     "athula@ceylonairduct.com",
     "nalin@ceylonairduct.com",
   ],
-  quoteEmail: "info@ceylonairduct.com",
+  quoteEmail: "sales@ceylonairduct.com",
   whatsapp: "https://wa.me/94774161678",
   factory: "538/B, Heenkenda, Ragama",
   salesOffice: "No 1005, Kandy Road, Kelaniya",
