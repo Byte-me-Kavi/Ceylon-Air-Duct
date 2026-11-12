@@ -1,0 +1,15 @@
+# robots.txt for Ceylon Air Duct Pvt Ltd
+# https://ceylonairduct.com
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas (add if you have any)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap location
+Sitemap: https://ceylonairduct.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1

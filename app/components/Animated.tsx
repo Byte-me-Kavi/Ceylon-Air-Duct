@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion, Variants } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 type VariantType = "fade" | "fadeUp" | "photo";
 
@@ -11,54 +11,53 @@ interface AnimatedProps {
   delay?: number;
   duration?: number;
   stagger?: boolean;
-  // how much of the element must be visible before animation triggers (0 to 1)
+  /** How much of the element must be visible before it animates (0 to 1). */
   triggerAmount?: number;
 }
 
+const EASE = [0.16, 1, 0.3, 1] as const;
+
 const variantsMap: Record<VariantType, Variants> = {
   fade: {
-    hidden: { opacity: 0, y: 6 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
   },
   fadeUp: {
-    hidden: { opacity: 0, y: 18, scale: 0.995 },
-    visible: { opacity: 1, y: 0, scale: 1 },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   },
   photo: {
-    hidden: { opacity: 0, y: 28, rotate: -3, scale: 0.995 },
-    visible: { opacity: 1, y: 0, rotate: 0, scale: 1 },
+    hidden: { opacity: 0, y: 24, scale: 0.98 },
+    visible: { opacity: 1, y: 0, scale: 1 },
   },
 };
 
+/**
+ * Reveal-on-scroll wrapper. Plays once per page view and renders
+ * statically when the visitor prefers reduced motion.
+ */
 export default function Animated({
   children,
   variant = "fade",
   className = "",
   delay = 0,
-  // increased default duration for slower, smoother reveals
-  duration = 1.0,
+  duration = 0.8,
   stagger = false,
-  // default trigger sensitivity: 0.3 means ~30% visible before animating
-  triggerAmount = 0.3,
+  triggerAmount = 0.25,
 }: AnimatedProps) {
-  const base: Variants = variantsMap[variant];
+  const reduce = useReducedMotion();
+  const base = variantsMap[variant];
 
-  // If we're not staggering, animate the parent element itself using the base variant.
-  const parentVariants: Variants = !stagger
-    ? base
-    : {
-        hidden: {},
-        visible: { transition: { staggerChildren: 0.12 } },
-      };
+  const parentVariants: Variants = stagger
+    ? { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }
+    : base;
 
-  // When staggering, wrap each immediate child in its own motion.div so staggerChildren works.
-  const wrappedChildren = stagger
+  const content = stagger
     ? React.Children.map(children, (child, i) => (
         <motion.div
           key={i}
           variants={base}
-          // slightly larger per-child offset for a slighter slower stagger
-          transition={{ duration, delay: delay + i * 0.08 }}
+          transition={{ duration, delay: delay + i * 0.06, ease: EASE }}
         >
           {child}
         </motion.div>
@@ -69,14 +68,12 @@ export default function Animated({
     <motion.div
       className={className}
       variants={parentVariants}
-      initial="hidden"
+      initial={reduce ? false : "hidden"}
       whileInView="visible"
-      // replay animation every time element enters the viewport
-      // `triggerAmount` controls how much of the element must be visible before animation runs
-      viewport={{ once: false, amount: triggerAmount }}
-      transition={{ duration }}
+      viewport={{ once: true, amount: triggerAmount }}
+      transition={{ duration, delay, ease: EASE }}
     >
-      {wrappedChildren}
+      {content}
     </motion.div>
   );
 }

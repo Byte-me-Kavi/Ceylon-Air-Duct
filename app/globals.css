@@ -1,87 +1,84 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/*
+  Design tokens
+  Palette: galvanized-steel neutrals plus one brand accent (logo blue).
+  - brand        #2a80b5  logo blue, decorative + large type only (4.3:1 on white)
+  - brand-strong #1f6a98  buttons, links, small accent text (5.9:1 on white)
+  Shape system: images and cards 12px (rounded-xl), small gallery thumbnails
+  8px (rounded-lg), buttons and chips full pill.
+  Z-index scale: nav 40. No overlays or modals.
+  Theme: light only, locked page-wide (matches the existing brand site).
+*/
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-brand: #2a80b5;
+  --color-brand-strong: #1f6a98;
+  --color-brand-deep: #185680;
+  --color-brand-tint: #e7f1f8;
+
+  --color-ink: #0f1d2b;
+  --color-steel-50: #f5f7f9;
+  --color-steel-100: #eaeef2;
+  --color-steel-200: #d9e0e6;
+  --color-steel-300: #c2ccd5;
+  --color-steel-400: #8d99a6;
+  --color-steel-600: #55626f;
+  --color-steel-700: #3d4955;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #171717;
+:root {
+  --background: #ffffff;
+  --foreground: #0f1d2b;
+  color-scheme: light;
+}
+
+html {
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+:focus-visible {
+  outline: 2px solid var(--color-brand-strong);
+  outline-offset: 3px;
 }
 
-/* Animations */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Hide scrollbar on horizontal chip rows while keeping them scrollable */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
-.animate-fade-in {
-  animation: fade-in 1s ease-out;
-}
-
-/* Glass effect utilities */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Scrollbar styling */
+/* Page scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--color-steel-100);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #2a80b5;
+  background: var(--color-steel-400);
   border-radius: 5px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #236a99;
-}
-
-/* Mobile menu animation helpers */
-.menu-transition {
-  transition: transform 400ms cubic-bezier(0.2, 0.9, 0.2, 1),
-    opacity 300ms ease-out, max-height 400ms ease;
-  transform-origin: top;
-}
-
-.scale-y-100 {
-  transform: scaleY(1);
-}
-.scale-y-95 {
-  transform: scaleY(0.95);
+  background: var(--color-brand-strong);
 }
